@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj={
+        name:'lisi',
+        parent:{
+             father:'li'
+        }
+    }
+    function deepclone(obj) {
+         if (obj==null||undefined){
+             return obj
+         }
+         var result=Array.isArray(obj)?[]:{}
+         for (let item in obj){
+          result[key]=typeof (obj[key])=="object"?deepclone(obj[key]):obj[key]
+        }
+    }
+</script>
+</body>
+</html>

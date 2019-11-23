@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="t"></p>
+<script>
+    let time=document.getElementById('t')
+    var lim=10
+
+    setInterval(function () {
+        if (lim>0){
+         lim=lim-1
+        time.innerHTML=lim+'秒后'
+        }else {
+            time.innerHTML='时间到'
+        }
+    },1000)
+
+</script>
+</body>
+</html>

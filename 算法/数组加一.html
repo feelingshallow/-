@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr=[9,9];
+    function plus1(digits) {
+     var n=digits.length-1;
+    for(var i=n;i>=0;i--){
+        if(digits[i]!==9){
+            digits[i]+=1;
+            return digits
+        }else{
+           digits[i]=0;
+        }
+       
+    }
+    var arr1=new Array()
+    arr1[0]=1;
+    return arr1.concat(digits);
+    }
+
+
+    console.log(plus1(arr));
+</script>
+</body>
+</html>

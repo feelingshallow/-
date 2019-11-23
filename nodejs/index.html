@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            width: 500px;
+            background-color: aliceblue;
+        }
+        input{
+            display: block;
+            width: 60%;
+            margin: auto;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            background-color: blueviolet;
+
+            margin: auto;
+        }
+    </style>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+  <div class="box">
+     用户名：<input type="text"id="username" placeholder="输入用户名">
+      密码：<input type="password" id="password" placeholder="输入密码">
+      <button id="login">登录</button>
+      <button id="reg">注册</button>
+  </div>
+  <script>
+      $('#login').click(function () {
+           $.ajax({
+               url:"http://localhost:8080/login",
+               data:{
+                 username:$('#username').val(),
+                   password:$('#password').val()
+               },
+               dataType:'json',
+               success(res){
+                   if (res.err){
+                       console.log(res.msg);
+                   }else {
+                       alert(res.msg)
+                   }
+               }
+           })
+      })
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //实现队列 即实现 入队和出队  队列是一种先进后出的数据结构 入队push  出队shift
+    class Queue{
+         constructor(...item){
+             this.queue=[...item]
+         }
+         enqueue(...item){
+             this.queue.push(...item)
+         }
+         dequeue(){
+             this.queue.shift()
+         }
+    }
+</script>
+</body>
+</html>

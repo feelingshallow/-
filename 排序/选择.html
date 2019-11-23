@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr=[15,2,36,1,5,35,45]
+    function select(arr) {
+        for (let i=0;i<arr.length;i++){
+            for(let j=0;j<arr.length;j++){
+                if (arr[i]<arr[j]){
+                    [arr[j],arr[i]]=[arr[i],arr[j]];
+                }
+            }
+        }
+        return arr;
+    }
+    console.log(select(arr));
+</script>
+</body>
+</html>

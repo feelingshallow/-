@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+     let arr=[1,2,3,4,5,6,7];
+     function f(arr,k) {
+        let newarr=arr.splice(arr.length-k,k)
+         console.log(newarr);
+        arr.unshift(...newarr)
+      return arr
+     }
+
+     console.log(f(arr, 2));
+</script>
+</body>
+</html>

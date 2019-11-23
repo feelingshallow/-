@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+/* 实现栈 的思想  首先栈的特性  ：先进后出。 出栈和入栈方法可以使用数组的pop push 来模拟  长度*/
+      class Stack{
+          constructor(...item){
+             this.stack=[...item]
+            }
+        push(...ele){
+               this.stack.push(...ele)
+          }
+        pop(){
+              this.stack.pop()
+          }
+          getisEmpty(){
+              return this.stack.length?'非空':'空'
+          }
+          print(){
+              console.log(this.stack.toString())
+          }
+      }
+      let sta=new Stack()
+sta.push(1,1,2,35,6,13);
+sta.print()
+
+</script>
+</body>
+</html>

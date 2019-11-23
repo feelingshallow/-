@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function testfinally() {
+         try{
+            new Array(-5)
+         }catch (e) {
+             return e
+         }
+    }
+
+    console.log(testfinally());
+</script>
+</body>
+</html>

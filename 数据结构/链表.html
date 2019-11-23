@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /* 链表是一种顺序存储结构，实现链表先要明白需要什么 1.节点 （指针数据）2.头结点 尾节点*/
+    class Node{
+        constructor(data){
+            this.data=data;
+            this.next=null
+        }
+    }
+    class Linklist{
+        constructor(){
+            this.head=null;
+            this.tail=null;
+            this.length=0
+        }
+        push(data){
+             const node=new Node(data)
+            if (this.head==null){
+                this.head=node;
+                this.tail=node;
+            }
+            this.tail.next=node;
+            this.tail=node;
+            this.length++
+        }
+        pop(){
+            //如果长度为0
+            if (this.isEmpty()){
+                return nll
+            }
+            //如果长度为1
+          if (this.head===this.tail){
+              this.head=null;
+              this.tail=null;
+              this.length--;
+              return  this.tail
+          }
+          //正常
+            let node = this.tail;
+            let currentNode = this.head;
+            let penultimate;//倒数第二
+            while (currentNode) {
+                if (currentNode.next === this.tail) {
+                    penultimate = currentNode;
+                    break
+                }
+                currentNode = currentNode.next
+            }
+            penultimate.next = null;
+            this.tail = penultimate;
+            this.length --;
+            return node
+        }
+         //获取指定下标的元素
+      get(index){
+            let currentNode=this.head;
+            if(index<0||index>this.length){
+                throw new Error('请输入正确的值') ;
+            }
+            if (index===0){
+                return this.head
+            }
+
+            for (let i=0;i<index;i++){
+
+                currentNode=currentNode.next;
+            }
+              return  currentNode
+      }
+        print() {
+            const list = []
+            let currentNode = this.head
+          for (let i=0;i<this.length;i++){
+              list.push(currentNode);
+              currentNode=currentNode.next;
+          }
+            return list.join(' => ')
+        }
+
+        isEmpty() {
+            return this.length === 0
+        }
+    }
+    let list= new Linklist();
+    list.push(12)
+    list.push(15)
+    console.log(list.print());
+</script>
+</body>
+</html>

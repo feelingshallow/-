@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+var values=[1,2,3,4]
+// values="kanni"
+function logError(sev,msg) {
+    var img=new Image();
+    img.src="log.php?sev="+encodeURIComponent(sev)+"&msg="+encodeURIComponent(msg)
+}
+   function f(values) {
+    try {
+        values.add(1)
+    }catch (e) {
+        console.log(e);
+    }
+
+       console.log(values);
+   }
+
+f();
+
+</script>
+</body>
+</html>

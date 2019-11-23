@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function func() {
+        console.log(this.msg);
+    }
+    let msg="hello"
+
+    let a={
+        msg:'nihao',
+        func:func
+    }
+    func()
+    func.bind(a)();
+    new func();
+</script>
+</body>
+</html>

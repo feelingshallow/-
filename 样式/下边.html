@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+        }
+        .active{
+           color: #6f49f8;
+        }
+        .box{
+            display: flex;
+
+        }
+        .box li{
+            width: 150px;
+            height: 50px;
+            background-color: aliceblue;
+            text-align: center;
+            position: relative;
+            line-height: 50px;
+        }
+        .active::before{
+            content: "";
+            display: block;
+            position: relative;
+            bottom: -48px;
+            left:  calc(50% - 21px);
+            width: 50px;
+            height: 5px;
+            background-color: #6f49f8;
+        }
+    </style>
+</head>
+<body>
+<ul class="box">
+    <li>夏季</li>
+    <li>家居</li>
+    <li>厨卫</li>
+    <li>消毒</li>
+    <li>口腔</li>
+    <li>护肤</li>
+</ul>
+<script src="jquery-3.4.1.min.js"></script>
+<script>
+
+    $('li').click(function (){
+        $(this).siblings().removeClass('active')
+        $(this).addClass('active')
+
+    })
+
+
+</script>
+</body>
+
+</html>
