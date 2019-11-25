@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var reverse = function(x) {
+           if(x>0){
+          var str= x+"";
+          var nums=str.split("").reverse().join("")
+                  return nums;
+           }else {
+               var str=x+"";
+               var nums=str.split("") ;
+                nums.splice(0,1);
+                var nums1= nums.reverse().join("");
+
+               return -nums1
+           }
+};
+       parseInt("15")
+     console.log(reverse(-456))
+    </script>
+</body>
+</html>
