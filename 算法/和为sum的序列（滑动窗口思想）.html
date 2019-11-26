@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function f(sum){
+             var arr1=[]
+             var min=1;
+             var max=2;
+             var s=0;
+             var arr=[];
+             while(max <sum){
+                 s=(min+max)*(max-min+1)/2;
+                 if(sum===s){
+                     for(var j=min;j<=max;j++){
+                         arr.push(j)
+                     }
+                     arr1.push(arr)
+                     arr=[]
+                     min++
+                 }else if(sum>s){
+                    max++
+                 }else{
+                     min++
+                 }
+             }
+             return arr1
+         }
+        console.log(f(100))
+        
+    </script>
+</body>
+</html>

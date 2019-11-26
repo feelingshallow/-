@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      .box{
+          width: 600px;
+          height: 300px;
+          background: #eee;
+          position: absolute;
+          margin: auto;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          overflow: hidden;
+      }
+      .container{
+        white-space: nowrap;
+          width: 100%;
+          height: 80%;
+          overflow: hidden;
+      }
+      ul,li{
+              list-style: none;
+              margin: 0;
+              padding: 0;
+      }
+   
+      .box ul li{
+          width: 100px;
+          height: 180px;
+          float: left;
+          margin: 0 20px;
+          background: #00c1de;
+      }
+      .box ul li img{
+          width: 100%;
+          height: 100%;
+          
+      }
+      .btn{
+          display: flex;
+          margin: 0 auto;
+          justify-content: center;
+          
+      }
+      .btn li{
+          width: 20px;
+          height: 10px;
+          background: red;
+          margin: 20px;
+          
+      }
+      .container ul{
+        
+          margin: 30px 20px;
+        float: left;
+        overflow: hidden;
+        
+      }
+     .one{
+         position: absolute;
+         left: 0;
+     }
+     .two{
+         position: absolute;
+        left: 1200px;
+     }
+     .three{
+         position: absolute;
+         left: 600px;
+     }
+     .active{
+         background: yellow !important;
+     }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+        <ul class="one">
+          <li>夏季</li>
+          <li>家居</li>
+          <li>厨卫</li>
+          <li>消毒</li>
+        </ul>
+        <ul class="two">
+            <li>夏季2</li>
+            <li>家居2</li>
+            <li>厨卫2</li>
+            <li>消毒2</li>
+        </ul>
+        <ul class="three">
+                <li>夏季3</li>
+                <li>家居3</li>
+                <li>厨卫3</li>
+                <li>消毒3</li>
+         </ul>
+        </div>
+        <p id="l"><</p>
+        <p id="r">></p>
+        <div class="btn">
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+    </div>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script>
+      var img=$('.container ul ')
+      console.log($(img[0]))
+
+      var btnli=$('.btn li');
+      var flag=true;
+      for(var i=0;i<btnli.length;i++){
+          btnli[i].addEventListener('click',function(){
+            $(this).siblings().removeClass('active')
+            $(this).addClass('active')
+            
+          })
+      }
+      $('#l').on('click',function(){
+          
+      })
+    </script>
+</body>
+</html>
