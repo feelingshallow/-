@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+function setname(name){
+ this.name = name
+}
+setname.prototype.printName = function(){ console.log(this.name) }
+let a = new setname("cc")
+console.log(a)
+a.name = "dd"
+console.log(a)
+a.__proto__.name = "ee"
+console.log(a)
+let b=new setname()
+
+    </script>
+</body>
+</html>

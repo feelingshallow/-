@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f(n,array,sum){
+            var min=0;
+            var max=n-1;
+            var arr=[]
+             while(min<max){
+                 if(array[min]+array[max]===sum){
+                      arr.push(array[min],array[max])
+                      break;
+                 }else if(array[min]+array[max]>sum){
+                     max--
+                 }else{
+                     min++
+                 }
+             }
+             return arr.join(" ");
+        }
+       console.log(f(6,[1,2,3,4,5,6],7))  
+        </script>
+</body>
+</html>
