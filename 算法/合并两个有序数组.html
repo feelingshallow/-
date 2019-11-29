@@ -8,13 +8,16 @@
 </head>
 <body>
     <script>
-       var str="llllll";
-       function f(str){
-           if(str.length<3){
-               return str;
-           }
-       }
-       console.log(f(str))
+       var arr1=[1,2,3,0,0,0];
+       var arr2=[2,5,6]
+      function f(arr1,m,arr2,n){
+         arr1=arr1.slice(0,m)
+         arr2=arr2.slice(0,n)
+         arr1=arr1.concat(arr2)
+         arr1.sort()
+         return arr1
+      }
+     console.log(f(arr1,3,arr2,3)) 
     </script>
 </body>
 </html>

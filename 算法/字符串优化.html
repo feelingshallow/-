@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 此函数作用字符串优化  aabb型 aab  aaa型aa
+       var str="aaabb";
+       function f(str){
+           if(str.length<3){
+               return str;
+           }
+           var newarr=[str[0],str[1]]
+           for(var i=2;i<str.length;i++){
+               if(str[i]==str[i-1]&&str[i-1]==str[i-2]){
+                    continue
+               }else if(str[i]==str[i-1]&&str[i-2]==str[i-3]){
+                    continue
+               }else{
+                         newarr.push(str[i])
+               }
+              
+           }
+           return newarr.join("")
+       }
+       console.log(f(str))
+    </script>
+</body>
+</html>
