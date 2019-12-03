@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[
+    {
+      "deviceId": "C2:01:F3:00:03:2D",
+      "name": "MiniBeacon_00001",
+      "RSSI": -68,
+      "advertisData": {},
+      "advertisServiceUUIDs": [],
+      "localName": "MiniBeacon_00001",
+      "serviceData": {
+        "0000FFF0-0000-1000-8000-00805F9B34FB": {}
+      }
+    },
+    {
+      "deviceId": "C2:01:F3:00:03:35",
+      "name": "MiniBeacon_00002",
+      "RSSI": -87,
+      "advertisData": {},
+      "advertisServiceUUIDs": [],
+      "localName": "MiniBeacon_00002",
+      "serviceData": {
+        "0000FFF0-0000-1000-8000-00805F9B34FB": {}
+      }
+    },
+    {
+      "deviceId": "C2:01:F3:00:03:21",
+      "name": "MiniBeacon_00003",
+      "RSSI": -86,
+      "advertisData": {},
+      "advertisServiceUUIDs": [],
+      "localName": "MiniBeacon_00003",
+      "serviceData": {
+        "0000FFF0-0000-1000-8000-00805F9B34FB": {}
+      }
+    },
+    {
+      "deviceId": "C2:01:F3:00:03:21",
+      "name": "snljknlknl_00003",
+      "RSSI": -86,
+      "advertisData": {},
+      "advertisServiceUUIDs": [],
+      "localName": "sdwkldpf;_00003",
+      "serviceData": {
+        "0000FFF0-0000-1000-8000-00805F9B34FB": {}
+      }
+    }
+  ]
+          var newarr=arr.filter((v)=>{
+              return  v.name.slice(0,10)=='MiniBeacon'
+          })
+          console.log(newarr)
+        </script>
+</body>
+</html>

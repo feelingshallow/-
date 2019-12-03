@@ -8,9 +8,9 @@
 <script>
     var arr=[15,2,36,1,5,35,45]
     function select(arr) {
-        for (let i=0;i<arr.length;i++){
-            for(let j=0;j<arr.length;j++){
-                if (arr[i]<arr[j]){
+        for (let i=0;i<arr.length-1;i++){
+            for(let j=i;j<arr.length;j++){
+                if (arr[i]>arr[j]){
                     [arr[j],arr[i]]=[arr[i],arr[j]];
                 }
             }

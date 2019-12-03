@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var proxy= new Proxy({},{
+           set:function(){
+                   console.log('正在调用通过set方法')
+                   
+           },
+           get:function(target,property){
+               console.log('正在调用get方法')
+               return 'null'
+           }
+       })
+       proxy.age=2     
+       console.log(proxy.age) //get方法被拦截所以返回值 null
+    console.log(proxy.name)    
+    
+    </script>
+</body>
+</html>

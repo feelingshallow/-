@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function createArray(...elements){
+            let handler={
+                  get(target,propkey,receiver){
+                  let index=Number(propkey)
+                  if(index<0){
+                     propkey=target.length+index
+                  }
+                   return Reflect.get(target,propkey,receiver)
+                  }
+            }
+            let target=[];
+            target.push(...elements);
+            return new Proxy(target,handler);
+        }
+       let arr=createArray('a','b','c');
+       console.log(arr[-2])
+    </script>
+</body>
+</html>
