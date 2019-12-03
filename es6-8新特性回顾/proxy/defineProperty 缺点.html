@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //缺点1.不能监听数组的属性，没有触发set变异方法如 push pop shift unshift sort splice reverse 这些会改变原数组的方法
+     let arr=[1,2,3]
+    let obj={}
+    Object.defineProperty(obj,'arr',{
+        get(){
+            console.log('get arr');
+            return arr
+        },
+        set(newVal){
+            console.log('set',newVal);
+            arr=newVal
+        }
+    })
+    obj.arr.push(4) //打印出了get arr 没有打印出set
+    obj.arr=[4,5,68]
+     console.log(obj.arr);
+</script>
+</body>
+</html>

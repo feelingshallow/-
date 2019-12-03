@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+       //第二个缺点则是必须遍历对象的每个属性
+    Object.keys(obj).forEach(key=>{
+        Object.defineProperty(obj,key,{
+
+        })
+    })
+      //第三个问题就是必须深层遍历嵌套对象
+    let obj={
+        info:{
+            name:'eason'
+        }
+    }
+    //逐层遍历就像是深拷贝一样  vue 源码中的walk方法
+</script>
+</body>
+</html>
