@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<style>
+        .box{
+            margin:100px auto ;
+            text-align:center;
+        }
+        img{
+            width:150px;
+            height:150px;
+        }
+        #trash{
+            margin:100px auto ;
+            width:400px;
+            height:200px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+        <div class="box">
+                <img src="../手撸一波轮播图/images/img-1.jpg" alt="" class='img' id='p3'>
+                <img src="../手撸一波轮播图/images/img-2.jpg" alt="" class='img' id='p3'>
+                <img src="../手撸一波轮播图/images/img-3.jpg" alt="" class='img' id='p3'>
+                <div id="trash">垃圾桶</div>
+            </div>
+            <script>
+                    var imgList = document.querySelectorAll('img') ; //所有img图片
+                    for(let i =0 ;i<imgList.length ; i++){
+                        var activeImg = imgList[i];
+                        activeImg.ondragstart = function(e){ //开始拖动源对象 - 图片
+                            e.dataTransfer.setData('planeId',this.id) ; //将源对象img的ID存储起来
+                        }
+                    }
+                    // 为目标对象(垃圾桶)添加事件监听 - 删除拖动的源对象
+                    trash.ondragenter = function(){ //源对象进入目标对象
+                        console.log('drag enter');        
+                    }
+                    trash.ondragleave = function(){ //源对象离开目标对象
+                        console.log('drag leave');
+                    }
+                    trash.ondragover = function(e){ //源对象悬停在目标对象上
+                        e.preventDefault(); //阻止默认行为，使得drop可以触发
+                    }
+                    trash.ondrop = function(e){ //源对象松手在目标对象上释放
+                        console.log('drop') ;
+                        var id = e.dataTransfer.getData('planeId'); //得到源对象的id
+                        var activeImg = document.getElementById(id); //根据id找到相关元素
+                        activeImg.parentNode.removeChild(activeImg) ; //从父元素中删除子元素
+                    }
+                </script>
+    
+</body>
+</html>

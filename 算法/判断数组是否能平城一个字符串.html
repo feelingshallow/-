@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'component';
+        var arr1 = ['c', 'p', 'o', 'n', 'e', 't'];
+        var arr2 = ['o', 'm', 'n']
+        var newarr = str.split("")
+        for(var i=0;i<newarr.length;i++){
+            for(var j=i;j<arr1.length;j++){
+                if(arr1[j]==newarr[i]){
+                    
+                    newarr.splice(i,1)
+                }
+            }
+        }
+        
+        console.log(newarr)
+
+
+
+    </script>
+</body>
+
+</html>
